@@ -1,0 +1,4 @@
+const C='sb-v2',F=['./','index.html','style.css','game.js','physics.js','levels.js','manifest.json','assets/head.png','assets/icon-192.png','assets/icon-512.png'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(F).then(()=>c.add('assets/matter.min.js').catch(()=>{}))).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(n=>{if(n.ok&&/matter|cdnjs/.test(e.request.url)){const cl=n.clone();caches.open(C).then(c=>c.put(e.request,cl));}return n;}).catch(()=>caches.match('index.html'))))});

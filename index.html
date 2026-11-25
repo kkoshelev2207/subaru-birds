@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b1030"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="assets/icon-192.png"><link rel="stylesheet" href="style.css"><title>SUBARU BIRDS</title></head><body>
+<div id="app"><canvas id="c"></canvas>
+<div id="hud" class="hide"><button id="bPause" class="ib"><b></b><b></b></button><div id="hLvl"></div><div id="hScore">0</div><div id="hShots"></div></div>
+<div id="menu" class="scr"><h1>SUBARU<br><span>BIRDS</span></h1><div class="sub">WRX STI · РОГАТКА</div><div class="sp"></div>
+<button class="btn big" id="bPlay">ИГРАТЬ</button><button class="btn alt" id="bSnd">ЗВУК: ВКЛ</button></div>
+<div id="lv" class="scr hide"><h2>УРОВНИ</h2><div id="grid"></div><button class="btn alt" id="bBack">НАЗАД</button></div>
+<div id="modal" class="scr hide dim"><div class="card"><h2 id="mT"></h2><div id="mS" class="stars"></div><div id="mP"></div><div id="mB"></div><div id="mBtns"></div></div></div>
+<div id="err" class="scr hide dim"><div class="card"></div></div></div>
+<script src="levels.js"></script><script src="physics.js"></script><script src="game.js"></script></body></html>
